@@ -8,5 +8,6 @@ To use this project you need to do the following steps:
 - Copy each line of output to the imem.txt which is empty in this repository and dave it.
 - Put your test cases in dmem.txt and save it.
 - Simulate it with iverilog tool.
+
 I used Venus simulator to write and simulate RISC-V assembly code and get the HEX output of my code in order to give it to the CPU instuction memory.
 ## Arvin Delavari - 5/16/2023
