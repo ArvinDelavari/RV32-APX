@@ -1,5 +1,5 @@
 # RV32-APX
-## 32 Bits RISC-V Processor with Approximate Adder
+## 32 Bit RISC-V Processor with Approximate Adder
 In this project, I made an RV32I processor which currently can perform an approximate addition function. 
 My goal is to make an approximate processor which can perfom several approxiamte functions with good accuracy and I'll update this project with other approximate arithmetic functions soon. This project is done with iverilog simulator and GTKWave tool.
 To use this project you need to do the following steps:
