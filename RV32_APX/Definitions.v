@@ -1,13 +1,3 @@
-/*
-      Avaiable instructions in the RV32-APX CPU:
-
-      ADD rd,rs1,rs2 (Approximate ADD)
-      AND rd,rs1,rs2
-      OR  rd,rs1,rs2
-      XOR AND rd,rs1,rs2
-
-*/
-
 `define RTYPE 51
 `define ITYPE 3
 `define STYPE 35
