@@ -15,7 +15,7 @@ module ALU
                 `ALU_OP_AND: result <= read_a & read_x;
                 `ALU_OP_OR:  result <= read_a | read_x;
                 `ALU_OP_ADD: result <= read_a + read_x;
-                `ALU_OP_ApproxAdd: begin //GeAr(32,2,6)
+                `ALU_OP_ApproxAdd: begin
                     result[7:0]   <= (read_a[7:0] ^ read_x[7:0]) + ((read_a[7:0] & read_x[7:0]) << 1);
                     result[9:8]   <= (read_a[9:8] ^ read_x[9:8]) + ((read_a[9:8] & read_x[9:8]) << 1);
                     result[11:10] <= (read_a[11:10] ^ read_x[11:10]) + ((read_a[11:10] & read_x[11:10]) << 1);
