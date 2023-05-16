@@ -1,1 +1,2 @@
-
+Add source code binary
+You can use Venus simulator to write and simulate RISC-V assembly code and get the HEX output of your code.
