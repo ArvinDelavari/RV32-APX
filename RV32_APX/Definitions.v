@@ -11,7 +11,7 @@
 `define ALU_OP_SLL 3
 `define ALU_OP_SLT 4
 `define ALU_OP_SLTU 5
-`define ALU_OP_ApproxAdd 6
+`define ALU_OP_ADD_APX 6
 `define ALU_OP_XOR 7
 `define ALU_OP_SRL 8
 `define ALU_OP_SRA 9
