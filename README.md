@@ -10,4 +10,5 @@ To use this project you need to do the following steps:
 - Simulate it with iverilog tool.
 
 I used Venus simulator to write and simulate RISC-V assembly code and get the HEX output of my code in order to give it to the CPU instuction memory.
+- Instuctions supported : ADD (Approximate), AND, OR, XOR, SLL, SRL, SLT, SLTU, SRA
 ## Arvin Delavari - 5/16/2023
