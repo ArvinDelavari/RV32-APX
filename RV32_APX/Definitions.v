@@ -15,6 +15,7 @@
 `define ALU_OP_XOR 7
 `define ALU_OP_SRL 8
 `define ALU_OP_SRA 9
+`define ALU_OP_MUL_APX 10
 
 `define AND 0
 `define OR 1
@@ -26,3 +27,4 @@
 `define XOR 7
 `define SRL 8
 `define SRA 9
+`define MUL 10
