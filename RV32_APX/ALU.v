@@ -36,6 +36,10 @@ module ALU
                 `ALU_OP_SLT:  result <= (read_a < read_x) ? 1 : 0;
                 `ALU_OP_SLTU: result <= (read_a < read_x) ? 1 : 0;
                 `ALU_OP_SRA:  result <= (read_a[31] == 1) ? (read_a >> read_x) | ((1 << (32 - read_x)) - 1) : (read_a >> read_x);
+                `ALU_OP_MUL:  result <= read_a * read_x;
+                `ALU_OP_MUL_APX : begin
+                    // Approximate Multiplier
+                    end
                 default:      result <= 0;
             endcase
         end
