@@ -15,7 +15,7 @@ module ALU
                 `ALU_OP_AND: result <= read_a & read_x;
                 `ALU_OP_OR:  result <= read_a | read_x;
                 `ALU_OP_ADD: result <= read_a + read_x;
-                `ALU_OP_ADD_APX: begin
+                `ALU_OP_ADD_APX: begin //GeAr(32,2,6)
                     result[7:0]   <= (read_a[7:0] ^ read_x[7:0]) + ((read_a[7:0] & read_x[7:0]) << 1);
                     result[9:8]   <= (read_a[9:8] ^ read_x[9:8]) + ((read_a[9:8] & read_x[9:8]) << 1);
                     result[11:10] <= (read_a[11:10] ^ read_x[11:10]) + ((read_a[11:10] & read_x[11:10]) << 1);
@@ -37,9 +37,9 @@ module ALU
                 `ALU_OP_SLTU: result <= (read_a < read_x) ? 1 : 0;
                 `ALU_OP_SRA:  result <= (read_a[31] == 1) ? (read_a >> read_x) | ((1 << (32 - read_x)) - 1) : (read_a >> read_x);
                 `ALU_OP_MUL:  result <= read_a * read_x;
-                `ALU_OP_MUL_APX : begin
-                    // Approximate Multiplier
-                    end
+                `ALU_OP_MUL_APX: begin
+                  // Appoximate Multiplier
+                  end
                 default:      result <= 0;
             endcase
         end
@@ -88,7 +88,13 @@ module ALU_Control
             alu_decode <= `SRA;
           end
         end
-      end 
+        else if (instruction[31:25] == 1) begin
+          if (instruction[14:12] == 0) begin
+            alu_decode <= `MUL;
+          end
+        end
+      end
+      
       else if (alu_operation == 0) begin
         alu_decode <= `ADD;
       end 
