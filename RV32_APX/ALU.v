@@ -1,13 +1,13 @@
 module ALU 
 (
-    input wire reset, 
-    input wire [4:0]  alu_decode, 
-    input wire [31:0] read_a, 
-    input wire [31:0] read_x, 
-    output reg [31:0] result
+  input wire reset, 
+  input wire [4:0]  alu_decode, 
+  input wire [31:0] read_a, 
+  input wire [31:0] read_x, 
+  output reg [31:0] result
 );
     always @(reset, alu_decode, read_a, read_x) begin
-        if (reset==1) begin
+        if (reset == 1) begin
           result <= 0;
         end
         if (reset == 0) begin
@@ -36,10 +36,6 @@ module ALU
                 `ALU_OP_SLT:  result <= (read_a < read_x) ? 1 : 0;
                 `ALU_OP_SLTU: result <= (read_a < read_x) ? 1 : 0;
                 `ALU_OP_SRA:  result <= (read_a[31] == 1) ? (read_a >> read_x) | ((1 << (32 - read_x)) - 1) : (read_a >> read_x);
-                `ALU_OP_MUL:  result <= read_a * read_x;
-                `ALU_OP_MUL_APX: begin
-                  // Appoximate Multiplier
-                  end
                 default:      result <= 0;
             endcase
         end
@@ -56,10 +52,10 @@ module ALU_Control
   always @(instruction, reset, alu_operation) 
   begin
     if(reset == 1) begin
-      alu_decode<=0;
+      alu_decode <= 0;
     end
     if (reset == 0) begin
-      if (alu_operation == 2) 
+      if (alu_operation == 2)
       begin
         if (instruction[31:25] == 0) 
         begin
@@ -88,11 +84,13 @@ module ALU_Control
             alu_decode <= `SRA;
           end
         end
+        /*
         else if (instruction[31:25] == 1) begin
           if (instruction[14:12] == 0) begin
             alu_decode <= `MUL;
           end
         end
+        */
       end
       
       else if (alu_operation == 0) begin
