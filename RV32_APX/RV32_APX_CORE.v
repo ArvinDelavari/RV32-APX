@@ -4,6 +4,7 @@
 `include "Program_Counter.v"
 `include "Immediate_Generator.v"
 `include "ALU.v"
+`include "Multiplier_Unit.v"
 `include "Memories.v"
 
 `timescale 1ns/100ps
@@ -38,6 +39,7 @@ module RV32_APX_CORE
   ALU ALU_APX(reset, alu_decode, read_a, read_x, result);
   ALU_MUX ALU_APX_MUX(reset, alu_src, immediate_gen, read_a, read_x);
   ALU_Control ALU_APX_Control(reset, instruction, alu_operation, alu_decode);
+  Multiplier mul(reset, clk, read_a, read_x,result);
 
   Register_File Reg_File(reset, clk, read_a_select, read_b_select, write_a_select, write_a, reg_write, read_a, read_b);
   
