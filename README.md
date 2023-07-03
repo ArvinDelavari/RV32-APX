@@ -3,6 +3,11 @@
 In this project, I made a 32 bit RISC-V processor which currently can perform an approximate addition function. 
 The final goal of this project is to make an approximate processor which can perfom several approxiamte functions with good accuracy in order to be used on some image processing and computer vision cases.
 
+## RV32-APX Datapath
+
+![Schematic](https://github.com/ArvinDelavari/RV32-APX/assets/86099054/7a7138f2-d6e3-4c84-a35b-e7dee701b0ac)
+
+
 This project is done with iverilog simulator and GTKWave tool.
 To use this project you need to do the following steps:
 - Write an assembly code with RIV32I instructions.
