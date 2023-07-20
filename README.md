@@ -10,7 +10,7 @@ The final goal of this project is to make an approximate processor which can per
 
 This project is done with iverilog simulator and GTKWave tool.
 To use this project you need to do the following steps:
-- Write an assembly code with RIV32I instructions.
+- Write an assembly code with RV32I instructions.
 - Get the HEX or BIN output of the code.
 - Copy each line of output to the imem.txt which is empty in this repository and save it.
 - Put your test cases in dmem.txt and save it.
